@@ -30,7 +30,7 @@ readData = async () => {
 
 insertData=async (obj)=>{
     let collection=await connectDB(DB,coll);
-    collection.insert(obj)
+   return collection.insert(obj)
 }
 
 /*insertData({
@@ -43,7 +43,7 @@ insertData=async (obj)=>{
 
 updateData=async(queriData,newData)=>{
     let collection=await connectDB(DB,coll);
-    collection.update(queriData,{$set:newData})
+    return collection.update(queriData,{$set:newData})
 }
 
 /*updateData({name:'lenovo S-76'},{Cat:'mobile'});*/
@@ -51,7 +51,7 @@ updateData=async(queriData,newData)=>{
 
 deleteData=async (obj)=>{
     let collection=await connectDB(DB,coll);
-    collection.deleteMany(obj);
+    return collection.deleteMany(obj);
 }
 
 /*deleteData({name:'lenovo S-76'});*/
