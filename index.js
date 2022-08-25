@@ -11,7 +11,8 @@ const app=express();
 app.use(express.json());
 
 app.use(cors({
-    origin: "*"
+    origin: "*",
+    "Access-Control-Allow-Origin": "*"
   }));
 
 app.get("/",async (req,res)=>{
@@ -19,7 +20,7 @@ app.get("/",async (req,res)=>{
     res.send(data);
 })
 
-app.post("/posting", async (req,res)=>{
+app.post("/", async (req,res)=>{
     let resp= await mongocurd.insert(req.body);
     res.send(resp);
 });
