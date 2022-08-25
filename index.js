@@ -19,10 +19,10 @@ app.get("/",async (req,res)=>{
     res.send(data);
 })
 
-app.post("/", async (req,res)=>{
+app.post("/posting", async (req,res)=>{
     let resp= await mongocurd.insert(req.body);
     res.send(resp);
-})
+});
 
 
 app.listen(port);
