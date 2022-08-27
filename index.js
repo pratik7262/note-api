@@ -1,7 +1,8 @@
 const express=require('express');
+const mongodb=require("mongodb")
 const mongocurd=require('./mongoCURD')
 const cors = require('cors');
-const mongodb=require(mongodb)
+
 
 let port=process.env.PORT || 80;
 
