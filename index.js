@@ -27,8 +27,8 @@ app.post("/", async (req,res)=>{
     res.send(resp);
 });
 
-app.put('/:note',async (req,res)=>{
-    let resp=await mongocurd.update({note:req.params.note},req.body);
+app.put('/:id',async (req,res)=>{
+    let resp=await mongocurd.update({_id: new mongodb.ObjectId(req.params.id)},req.body);
     res.send(resp);
 })
 
