@@ -25,5 +25,15 @@ app.post("/", async (req,res)=>{
     res.send(resp);
 });
 
+app.put('/:id',async (req,res)=>{
+    let resp=await mongocurd.update({Name:req.params.id},req.body);
+    res.send(resp);
+})
+
+app.delete("/:id",async (req,res)=>{
+    let resp=await mongocurd.delete({_id: new mongodb.ObjectId(req.params.id)});
+    res.send(resp);
+})
+    
 
 app.listen(port);
